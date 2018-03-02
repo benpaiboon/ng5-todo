@@ -1,0 +1,24 @@
+<form #todoForm="ngForm" (ngSubmit)="addTodo(todoForm)" novalidate>
+  <div class="form-group">
+    <div class="form-group">
+      <div class="col-sm-6">
+        <h1>Todo App</h1>
+        <div class="input-group mb-3">
+          <input class="form-control form-control-lg" name="todoText" placeholder="Enter your task" autofocus ngModel required #todoText="ngModel">
+          <div class="input-group-append">
+            <button class="btn btn-success">Add Todo</button>
+          </div>
+        </div>
+        <table class="table table-hover">
+          <tbody>
+            <tr *ngFor="let todo of todos; let i = index;">
+              <td><h4>{{ todo.newTodo }}</h4></td>
+              <td><button (click)="deleteTodo(i)" class="btn btn-primary btn-sm">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- <button class="btn btn-danger" (click)="deleteSelectedTodo()">Delete Selected</button> -->
+      </div>
+    </div>
+  </div>
+</form>

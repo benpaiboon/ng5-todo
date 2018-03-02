@@ -1,11 +1,3 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-  <input name="first" ngModel required #first="ngModel">
-  <input name="last" ngModel required #last="ngModel">
-  <button>Submit</button>
-</form>
-
-<p>First name value: {{ first.value }}</p>
-<p>Last name valid: {{ last.value }}</p>
-<p>Form value: {{ f.value | json }}</p>
-<p>Form valid: {{ f.valid }}</p>
-
+<div class="container">
+  <app-todo></app-todo>
+</div>
