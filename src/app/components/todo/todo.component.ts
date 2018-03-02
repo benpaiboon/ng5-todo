@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TodoDataService } from './todo.service';
+import { RestHandlerService } from '../../services/resthandler.service';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css'],
-  providers: [TodoDataService]
+  providers: [TodoDataService, RestHandlerService]
 })
 export class TodoComponent implements OnInit {
 
   private todos: Array<object>;
 
-  constructor(private todoDataService: TodoDataService) {
+  constructor(private todoDataService: TodoDataService, private restHandler: RestHandlerService) {
     this.todos = [];
   }
 
@@ -36,6 +37,14 @@ export class TodoComponent implements OnInit {
       // this.todoDataService.addTodo(todoObj).subscribe(res => {
       //   this.todos.unshift(todoObj);
       // });
+      this.restHandler.postData(todoObj, '/api/todo')
+          .map(res => console.log(res))
+          .subscribe(
+          data => {
+            console.log('add todo success')
+          },
+          error => console.log(error)
+          )
     }
     todoForm.reset();
   }

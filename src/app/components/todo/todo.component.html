@@ -1,4 +1,4 @@
-<form #todoForm="ngForm" (ngSubmit)="addTodo(todoForm)" novalidate>
+<!-- <form #todoForm="ngForm" (ngSubmit)="addTodo(todoForm)" novalidate>
   <div class="form-group">
     <div class="form-group">
       <div class="col-sm-6">
@@ -9,7 +9,6 @@
             <button class="btn btn-success">Add Todo</button>
           </div>
         </div>
-        <!-- <button class="btn btn-danger" (click)="deleteSelectedTodo()">Delete Selected</button> -->
       </div>
     </div>
   </div>
@@ -27,4 +26,31 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
+
+<form>
+  <fieldset>
+    <div class="form-group">
+      <label for="fname">First Name</label>
+      <input type="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="lname">Last Name</label>
+      <input type="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="emailAddr">Email address</label>
+      <input type="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="exampleSelect1">Job Rules</label>
+      <select class="form-control" id="exampleSelect1">
+        <option>Selected</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+  </fieldset>
+</form>
