@@ -1,5 +1,5 @@
 {
-  "name": "ng5-test",
+  "name": "ng5-todo",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/core": "^0.4.3",
     "@angular/animations": "^5.0.0",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
